@@ -1,398 +1,185 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-
-<meta charset="utf-8" />
-<meta name="generator" content="pandoc" />
-<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
-
-
-
-
-<title>Brad (Dae Hwan) Kim</title>
-
-<script src="site_libs/header-attrs-2.28/header-attrs.js"></script>
-<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
-<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
-<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
-<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
-<style>h1 {font-size: 34px;}
-       h1.title {font-size: 38px;}
-       h2 {font-size: 30px;}
-       h3 {font-size: 24px;}
-       h4 {font-size: 18px;}
-       h5 {font-size: 16px;}
-       h6 {font-size: 12px;}
-       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
-       pre:not([class]) { background-color: white }</style>
-<script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/font-awesome-6.4.2/css/all.min.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet" />
-
-<style type="text/css">
-  code{white-space: pre-wrap;}
-  span.smallcaps{font-variant: small-caps;}
-  span.underline{text-decoration: underline;}
-  div.column{display: inline-block; vertical-align: top; width: 50%;}
-  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-  ul.task-list{list-style: none;}
-    </style>
-
-<style type="text/css">code{white-space: pre;}</style>
-<script type="text/javascript">
-if (window.hljs) {
-  hljs.configure({languages: []});
-  hljs.initHighlightingOnLoad();
-  if (document.readyState && document.readyState === "complete") {
-    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
-  }
-}
-</script>
-
-
-
-
-
-
-<link rel="stylesheet" href="styles.css" type="text/css" />
-
-
-
-<style type = "text/css">
-.main-container {
-  max-width: 940px;
-  margin-left: auto;
-  margin-right: auto;
-}
-img {
-  max-width:100%;
-}
-.tabbed-pane {
-  padding-top: 12px;
-}
-.html-widget {
-  margin-bottom: 20px;
-}
-button.code-folding-btn:focus {
-  outline: none;
-}
-summary {
-  display: list-item;
-}
-details > summary > p:only-child {
-  display: inline;
-}
-pre code {
-  padding: 0;
-}
-</style>
-
-
-<style type="text/css">
-.dropdown-submenu {
-  position: relative;
-}
-.dropdown-submenu>.dropdown-menu {
-  top: 0;
-  left: 100%;
-  margin-top: -6px;
-  margin-left: -1px;
-  border-radius: 0 6px 6px 6px;
-}
-.dropdown-submenu:hover>.dropdown-menu {
-  display: block;
-}
-.dropdown-submenu>a:after {
-  display: block;
-  content: " ";
-  float: right;
-  width: 0;
-  height: 0;
-  border-color: transparent;
-  border-style: solid;
-  border-width: 5px 0 5px 5px;
-  border-left-color: #cccccc;
-  margin-top: 5px;
-  margin-right: -10px;
-}
-.dropdown-submenu:hover>a:after {
-  border-left-color: #adb5bd;
-}
-.dropdown-submenu.pull-left {
-  float: none;
-}
-.dropdown-submenu.pull-left>.dropdown-menu {
-  left: -100%;
-  margin-left: 10px;
-  border-radius: 6px 0 6px 6px;
-}
-</style>
-
-<script type="text/javascript">
-// manage active state of menu based on current page
-$(document).ready(function () {
-  // active menu anchor
-  href = window.location.pathname
-  href = href.substr(href.lastIndexOf('/') + 1)
-  if (href === "")
-    href = "index.html";
-  var menuAnchor = $('a[href="' + href + '"]');
-
-  // mark the anchor link active (and if it's in a dropdown, also mark that active)
-  var dropdown = menuAnchor.closest('li.dropdown');
-  if (window.bootstrap) { // Bootstrap 4+
-    menuAnchor.addClass('active');
-    dropdown.find('> .dropdown-toggle').addClass('active');
-  } else { // Bootstrap 3
-    menuAnchor.parent().addClass('active');
-    dropdown.addClass('active');
-  }
-
-  // Navbar adjustments
-  var navHeight = $(".navbar").first().height() + 15;
-  var style = document.createElement('style');
-  var pt = "padding-top: " + navHeight + "px; ";
-  var mt = "margin-top: -" + navHeight + "px; ";
-  var css = "";
-  // offset scroll position for anchor links (for fixed navbar)
-  for (var i = 1; i <= 6; i++) {
-    css += ".section h" + i + "{ " + pt + mt + "}\n";
-  }
-  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
-  document.head.appendChild(style);
-});
-</script>
-
-<!-- tabsets -->
-
-<style type="text/css">
-.tabset-dropdown > .nav-tabs {
-  display: inline-table;
-  max-height: 500px;
-  min-height: 44px;
-  overflow-y: auto;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "\e259";
-  font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "\e258";
-  font-family: 'Glyphicons Halflings';
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs > li.active {
-  display: block;
-}
-
-.tabset-dropdown > .nav-tabs > li > a,
-.tabset-dropdown > .nav-tabs > li > a:focus,
-.tabset-dropdown > .nav-tabs > li > a:hover {
-  border: none;
-  display: inline-block;
-  border-radius: 4px;
-  background-color: transparent;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
-  display: block;
-  float: none;
-}
-
-.tabset-dropdown > .nav-tabs > li {
-  display: none;
-}
-</style>
-
-<!-- code folding -->
-
-
-
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brad Kim</title>
+  <meta name="description" content="Brad Kim is a Senior Data Scientist at Phia in New York, building LLM agents and ML systems for product growth.">
+  <meta property="og:title" content="Brad Kim">
+  <meta property="og:description" content="Senior Data Scientist at Phia. LLM agents, ML systems and experimentation.">
+  <meta property="og:image" content="https://brad-kim.com/images/brad.jpg">
+  <meta property="og:url" content="https://brad-kim.com/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
 </head>
-
 <body>
 
-
-<div class="container-fluid main-container">
-
-
-
-
-<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="index.html">Brad (Dae Hwan) Kim</a>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="#" class="nav-logo">brad kim</a>
+      <div class="nav-links">
+        <a href="#work">work</a>
+        <a href="#projects">projects</a>
+        <a href="#skills">skills</a>
+        <a href="files/Resume_BradKim.pdf" target="_blank" rel="noopener" class="nav-cta">cv ↗</a>
+      </div>
     </div>
-    <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-        <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Stat/ML
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-    <li>
-      <a href="stat1.html">Predicting Bank Customer Churn</a>
-    </li>
-    <li>
-      <a href="stat2.html">Predicting Click-Through Rate (CTR)</a>
-    </li>
-    <li>
-      <a href="stat3.html">Enhancing Airbnb Revenue with Tableau</a>
-    </li>
-  </ul>
-</li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li>
-  <a href="contact.html">
-    <span class="fas fa-envelope"></span>
-     
-  </a>
-</li>
-<li>
-  <a href="files/Resume_BradKim.pdf">
-    <span class="ai ai-cv ai-lg"></span>
-     
-  </a>
-</li>
-<li>
-  <a href="http://daehwankim96.github.io">
-    <span class="fab fa-github"></span>
-     
-  </a>
-</li>
-<li>
-  <a href="https://www.linkedin.com/in/bradkim0/">
-    <span class="fab fa-linkedin-in"></span>
-     
-  </a>
-</li>
-      </ul>
-    </div><!--/.nav-collapse -->
-  </div><!--/.container -->
-</div><!--/.navbar -->
+  </nav>
 
-<div id="header">
+  <main class="container">
 
+    <header class="intro">
+      <div class="profile">
+        <img src="images/brad.jpg" alt="Brad Kim">
+        <div>
+          <h1>Brad Kim</h1>
+          <div class="role">Senior Data Scientist at Phia · New York</div>
+          <div class="links">
+            <a href="https://github.com/bradkim00" target="_blank" rel="noopener">github</a> ·
+            <a href="https://www.linkedin.com/in/bradkim0/" target="_blank" rel="noopener">linkedin</a> ·
+            <a href="mailto:brad.dhkim@gmail.com">email</a> ·
+            <a href="files/Resume_BradKim.pdf" target="_blank" rel="noopener">cv</a>
+          </div>
+        </div>
+      </div>
 
+      <p>
+        I build LLM agents and ML systems that help product teams make better decisions.
+        At Phia, I built a Claude-powered analytics agent and ran the experiments behind
+        our growth from 300K to 2M users.
+      </p>
+      <p>
+        Before that, I worked on unsupervised anti-money-laundering detection with
+        Société Générale and on customer analytics at MIDAS IT. I hold an M.S. in
+        Applied Analytics from Columbia.
+      </p>
+    </header>
 
+    <section id="work">
+      <h2>Work</h2>
 
-</div>
+      <div class="entry">
+        <div class="when">2025 — now</div>
+        <div>
+          <h3>Senior Data Scientist <span class="org">· Phia</span></h3>
+          <ul>
+            <li>Built <strong>Phia Data</strong>, a Claude-powered Slack analytics agent with nightly evals. It serves 20+ users and cut ad-hoc data requests by ~75%.</li>
+            <li>Built an LLM-based user profiling pipeline for home-feed personalization, contributing to ~20% MAU growth.</li>
+            <li>Led 20+ A/B experiments and owned growth analytics from 300K to 2M users.</li>
+            <li>Built Airflow pipelines and canonical data models that cut BigQuery costs by ~45%.</li>
+          </ul>
+        </div>
+      </div>
 
+      <div class="entry">
+        <div class="when">2025</div>
+        <div>
+          <h3>Data Science Capstone Consultant <span class="org">· Société Générale</span></h3>
+          <ul>
+            <li>Built an unsupervised AML anomaly detection system on 861K international wire transactions.</li>
+            <li>Engineered 240 features and built hybrid HBOS / PCA / Isolation Forest / ECOD ensembles that caught all 32 benchmark suspicious transactions.</li>
+          </ul>
+        </div>
+      </div>
 
-<p><link rel="stylesheet" href="styles.css" type="text/css">
-<link rel="stylesheet" href="site_libs/academicons-1.9.1/css/academicons.min.css"/></p>
-<p><br></p>
-<p align="center">
-<img src="images/Profile.jpg" style="width:40%; border:0.5px solid; margin-right: 20px" align="center">
-</p>
-<p><br> 👋 Hello! I’m <strong>Brad Kim</strong>, a graduate student with
-extensive experience in Data Analytics and Strategy.</p>
-<p>📍 Currently based in New York, NY.</p>
-<p>👨‍💻 I’m pursuing a graduate degree in Applied Analytics at Columbia
-University, with 2 years of experience analyzing customer data and
-developing actionable strategies using CRM tools.</p>
-<p>💼 Previously, I worked as a <strong>Project Manager</strong> at
-MIDAS IT. My role involves:</p>
-<ul>
-<li>Utilizing SQL for comprehensive data management.</li>
-<li>Successfully promoting MIDAS Structural Engineering Software to over
-80 universities in the US, UK, and Canada, exceeding targets by
-200%.</li>
-<li>Orchestrating personalized engagement strategies for over 300
-professors through various channels, leveraging SQL-driven insights to
-effectively tailor communications and enhance market penetration.</li>
-</ul>
-<p>💻 My skill set includes:</p>
-<ul>
-<li><strong>Programming:</strong> R, Python</li>
-<li><strong>Data Visualization:</strong> Power BI, Tableau, Looker</li>
-<li><strong>Database Management:</strong> MySQL, PostgreSQL, Big Query,
-SnowFlake</li>
-<li><strong>Version Control:</strong> Git, Github, HubSpot</li>
-</ul>
-<p>🔥 My goal is to drive impactful, data-driven solutions that help
-organizations optimize their operations and solve complex
-challenges.</p>
-<p>🌍 My mission is to connect people with better products and services
-worldwide.</p>
-<p>In my free time, I 🎾 Enjoy playing tennis and ⚽ Analyze soccer
-tactics and strategies.</p>
-<hr />
-<p>For more details or inquiries, feel free to reach out via <a
-href="mailto:brad.dhkim@gmail.com">brad.dhkim@gmail.com</a>.</p>
+      <div class="entry">
+        <div class="when">2022 — 2024</div>
+        <div>
+          <h3>Data Analyst <span class="org">· MIDAS IT, Seoul</span></h3>
+          <ul>
+            <li>Used SQL, Python and BI to expand product adoption to 80+ universities in the U.S., UK and Canada, beating targets by 200%.</li>
+          </ul>
+        </div>
+      </div>
 
+      <div class="entry">
+        <div class="when">2024 — 2025</div>
+        <div>
+          <h3>M.S. Applied Analytics <span class="org">· Columbia University</span></h3>
+          <p class="note">GPA 4.0. Founding board member, Columbia University Consulting Club.</p>
+        </div>
+      </div>
 
-<br><br>
-<footer>
-  <p class="copyright text-muted" align="center">Copyright &copy; 2022 John Appleseed</p>
-</footer>
+      <div class="entry">
+        <div class="when">2021</div>
+        <div>
+          <h3>B.A. Communication <span class="org">· Boston College</span></h3>
+          <p class="note">Cum Laude.</p>
+        </div>
+      </div>
+    </section>
 
+    <section id="projects">
+      <h2>Projects</h2>
 
+      <div class="project">
+        <div class="project-head"><h3>Phia Data: LLM analytics agent</h3></div>
+        <p>A Claude-powered Slack agent that answers the team's data questions automatically, with nightly evaluations to keep answers reliable. Cut ad-hoc requests to the data team by ~75%.</p>
+        <div class="meta"><div class="tags"><span class="tag">LLM agents</span><span class="tag">Claude</span><span class="tag">Slack</span><span class="tag">evals</span></div></div>
+      </div>
 
-</div>
+      <div class="project">
+        <div class="project-head"><h3>AML Anomaly Detection</h3></div>
+        <p>An unsupervised detection system with risk tiers and a Streamlit investigator dashboard for 861K wire transactions.</p>
+        <div class="meta"><div class="tags"><span class="tag">Python</span><span class="tag">Isolation Forest</span><span class="tag">ECOD</span><span class="tag">Streamlit</span></div></div>
+      </div>
 
-<script>
+      <div class="project">
+        <div class="project-head"><h3>Amazon Cart Abandonment</h3></div>
+        <p>Combined logistic regression (78.4% accuracy), K-means and sentiment analysis on 600+ users. Users with low trust in recommendations were 67% more likely to abandon.</p>
+        <div class="meta"><div class="tags"><span class="tag">Python</span><span class="tag">K-means</span><span class="tag">NLP</span></div></div>
+      </div>
 
-// add bootstrap table styles to pandoc tables
-function bootstrapStylePandocTables() {
-  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
-}
-$(document).ready(function () {
-  bootstrapStylePandocTables();
-});
+      <div class="project">
+        <div class="project-head"><h3><a href="projects/bank-churn.html">Bank Customer Churn Prediction</a></h3></div>
+        <p>Compared five classifiers. Random Forest reached 95.4% accuracy and an AUC of 0.98.</p>
+        <div class="meta">
+          <div class="tags"><span class="tag">Python</span><span class="tag">Random Forest</span><span class="tag">SVM</span></div>
+          <a href="projects/bank-churn.html">writeup</a>
+          <a href="https://nbviewer.org/github/bradkim00/daehwankim96.github.io/blob/main/files/Bank_Churn_Rate.ipynb" target="_blank" rel="noopener">notebook ↗</a>
+        </div>
+      </div>
 
+      <div class="project">
+        <div class="project-head"><h3><a href="projects/ctr-prediction.html">Ad Click-Through Rate Prediction</a></h3></div>
+        <p>Predicted ad CTR with an XGBoost model tuned by Bayesian optimization, and identified the factors that drive engagement.</p>
+        <div class="meta">
+          <div class="tags"><span class="tag">R</span><span class="tag">XGBoost</span><span class="tag">Bayesian Opt.</span></div>
+          <a href="projects/ctr-prediction.html">writeup</a>
+          <a href="files/PAC_Dae-Hwan-Kim.html" target="_blank" rel="noopener">report ↗</a>
+        </div>
+      </div>
 
-</script>
+      <div class="project">
+        <div class="project-head"><h3><a href="projects/airbnb-revboost.html">Airbnb Revenue Diagnostics</a></h3></div>
+        <p>Diagnosed an 18% revenue drop across five U.S. cities using Tableau and regression analysis.</p>
+        <div class="meta">
+          <div class="tags"><span class="tag">Tableau</span><span class="tag">Regression</span></div>
+          <a href="projects/airbnb-revboost.html">writeup</a>
+          <a href="files/Revboost.pdf" target="_blank" rel="noopener">report ↗</a>
+        </div>
+      </div>
+    </section>
 
-<!-- tabsets -->
+    <section id="skills">
+      <h2>Skills</h2>
+      <dl class="skills">
+        <dt>languages</dt><dd>Python, R, SQL</dd>
+        <dt>ml / ai</dt><dd>LLM agents (Claude), evals, XGBoost, Random Forest, anomaly detection, A/B testing</dd>
+        <dt>data</dt><dd>BigQuery, Snowflake, PostgreSQL, Airflow, PySpark, Hive</dd>
+        <dt>tools</dt><dd>Looker, Tableau, Power BI, AWS, Azure, Datadog, Git</dd>
+      </dl>
+    </section>
+  </main>
 
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open');
-  });
-});
-</script>
-
-<!-- code folding -->
-
-
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
+  <footer>
+    <div class="container footer-inner">
+      <div>© 2026 Brad Kim</div>
+      <div><a href="mailto:brad.dhkim@gmail.com">brad.dhkim@gmail.com</a></div>
+    </div>
+  </footer>
 
 </body>
 </html>

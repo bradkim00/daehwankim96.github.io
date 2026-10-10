@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Predicting Ad Click-Through Rate — Brad Kim</title>
+  <meta name="description" content="Optimizing digital ad performance with machine learning in R.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="../index.html" class="nav-logo">brad kim</a>
+      <div class="nav-links">
+        <a href="../index.html#work">work</a>
+        <a href="../index.html#projects">projects</a>
+        <a href="../index.html#skills">skills</a>
+        <a href="../files/Resume_BradKim.pdf" target="_blank" rel="noopener" class="nav-cta">cv ↗</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="article">
+    <a href="../index.html#projects" class="back">← all projects</a>
+    <h1>Predicting Ad Click-Through Rate</h1>
+    <p class="subtitle">Optimizing digital ad performance with machine learning in R.</p>
+    <div class="tags"><span class="tag">R</span><span class="tag">XGBoost</span><span class="tag">Random Forest</span><span class="tag">Bayesian Optimization</span></div>
+
+    <div class="highlight"><p><strong>Result:</strong> A Bayesian-tuned <strong>XGBoost</strong> model had the lowest RMSE of all models tested. It also identified the ad factors that drive engagement.</p></div>
+
+    <h2>Goal</h2>
+    <p>Predict click-through rate (CTR) and identify the ad factors that drive engagement, such as quality, relevance and audience targeting. The findings help businesses allocate ad budgets more effectively.</p>
+
+    <figure>
+      <img src="../images/ctr_correlation.png" alt="Correlation heatmap of ad features">
+      <figcaption>Correlation heatmap of ad features</figcaption>
+    </figure>
+
+    <h2>Approach</h2>
+    <ul>
+      <li><strong>Preprocessing:</strong> Cleaned the data, handled missing values and encoded categorical variables.</li>
+      <li><strong>Feature engineering:</strong> Identified the key predictors of CTR.</li>
+      <li><strong>Modeling:</strong> Compared Logistic Regression, Decision Tree, Random Forest and XGBoost.</li>
+      <li><strong>Tuning:</strong> Used Bayesian Optimization for hyperparameters and compared models on RMSE.</li>
+    </ul>
+
+    <figure>
+      <img src="../images/ctr_rmse.png" alt="RMSE comparison across models">
+      <figcaption>RMSE comparison across models</figcaption>
+    </figure>
+
+    <h2>Takeaways</h2>
+    <p>XGBoost captured complex, non-linear ad-performance patterns better than the other models. The final model gives marketers a clear basis for refining targeting and getting more return from their ad spend.</p>
+
+    <h2>Report</h2>
+    <p><a class="btn btn-primary" href="../files/PAC_Dae-Hwan-Kim.html" target="_blank" rel="noopener">View report &amp; code ↗</a></p>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>© 2026 Brad Kim</div>
+      <div><a href="../index.html">home</a></div>
+    </div>
+  </footer>
+
+</body>
+</html>

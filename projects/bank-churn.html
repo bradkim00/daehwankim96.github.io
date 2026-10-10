@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Predicting Bank Customer Churn — Brad Kim</title>
+  <meta name="description" content="Using machine learning to flag at-risk customers and inform retention strategy.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="../index.html" class="nav-logo">brad kim</a>
+      <div class="nav-links">
+        <a href="../index.html#work">work</a>
+        <a href="../index.html#projects">projects</a>
+        <a href="../index.html#skills">skills</a>
+        <a href="../files/Resume_BradKim.pdf" target="_blank" rel="noopener" class="nav-cta">cv ↗</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="article">
+    <a href="../index.html#projects" class="back">← all projects</a>
+    <h1>Predicting Bank Customer Churn</h1>
+    <p class="subtitle">Using machine learning to flag at-risk customers and inform retention strategy.</p>
+    <div class="tags"><span class="tag">Python</span><span class="tag">Random Forest</span><span class="tag">SVM</span><span class="tag">LASSO</span><span class="tag">Binary Classification</span></div>
+
+    <div class="highlight"><p><strong>Result:</strong> Random Forest was the best model, with <strong>95.39% accuracy</strong> and an <strong>AUC of 0.98</strong>. Transaction amount and transaction count were the strongest churn signals.</p></div>
+
+    <h2>Goal</h2>
+    <p>Predict which bank customers are likely to churn so the bank can retain them before they leave. The analysis also feeds into broader customer relationship management decisions.</p>
+
+    <figure>
+      <img src="../images/randomforest.png" alt="Random Forest feature importance">
+      <figcaption>Random Forest feature importance</figcaption>
+    </figure>
+
+    <h2>Approach</h2>
+    <ul>
+      <li><strong>EDA:</strong> Explored customer demographics, transaction behavior and financial habits.</li>
+      <li><strong>Preprocessing:</strong> Applied feature scaling and categorical encoding.</li>
+      <li><strong>Modeling:</strong> Trained Random Forest, SVM, Decision Tree, kNN and LASSO logistic regression.</li>
+      <li><strong>Evaluation:</strong> Compared models on accuracy, precision, recall and AUC.</li>
+    </ul>
+
+    <figure>
+      <img src="../images/bank_churn.png" alt="ROC curves by model">
+      <figcaption>ROC curves by model</figcaption>
+    </figure>
+
+    <h2>Takeaways</h2>
+    <p>Across every model, <code>Total_Trans_Amt</code> and <code>Total_Trans_Ct</code> were the strongest churn signals. Customers who transact less are the ones to target with retention campaigns, which makes a clear case for data-driven outreach.</p>
+
+    <h2>Code</h2>
+    <p><a class="btn btn-primary" href="https://nbviewer.org/github/bradkim00/daehwankim96.github.io/blob/main/files/Bank_Churn_Rate.ipynb" target="_blank" rel="noopener">View notebook ↗</a></p>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>© 2026 Brad Kim</div>
+      <div><a href="../index.html">home</a></div>
+    </div>
+  </footer>
+
+</body>
+</html>
